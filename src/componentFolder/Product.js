@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import '../styleFolder/product.css'
+// Step1: importing redux function from cartSlice
 import {updateCart} from '../store/cartSlice'
 
 
@@ -14,8 +15,9 @@ const Product = () => {
   },[data])
 
   const cartHandler = (item) => {
-    dispatch(updateCart(item)); // Corrected this line to use `dispatch`
-  };
+    // Step2: calling redux function from cartSlice
+    dispatch(updateCart(item)); 
+  }
 
   return (
     // below div wrap the all cart
