@@ -1,9 +1,11 @@
 import './App.css';
-// import Product from './componentFolder/Product';
 import {useDispatch } from 'react-redux';
 import { setData } from '../src/store/productSlice';
 import { useEffect } from 'react';
-import Product from '../src/componentFolder/Product';
+import Product from './componentFolder/Product';
+import Navbar from './componentFolder/Navbar';
+import ShoppingCart from './componentFolder/ShppingCart';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -16,7 +18,9 @@ function App() {
   }, []);
 
   return <div>
+    <Navbar/>
     <Product/>
+    <ShoppingCart/>
   </div>;
 }
 

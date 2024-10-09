@@ -21,22 +21,23 @@ const Product = () => {
 
   return (
     // below div wrap the all cart
-    <div className='grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 grid-col-1 gap-5 p-10 bg-green-300 justify-center'>
+    <div className='grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 grid-col-1 gap-5 p-10 bg-gray-50 justify-center'>
 
       {products && products.map((item)=>(
         // one cart div
-        <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  xl:h-[500px] lg:h-[520px] md:h-[520px] h-[520px]">
+        <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  xl:h-[500px] lg:h-[520px] md:h-[520px] h-[480px]">
 
             {/* <div>Title: {item.title}</div>
             <div>Description: {item.description}</div>
             <div>price: {item.price}</div>
             <div> <img src={item.images[0]} /></div> */}
 {/* Image */}
-    <a href="#" className='flex justify-center'>
-        <img className="p-8 rounded-t-lg lg:h-[250px] md:h-[300px] object-cover" src={item.images[0]} alt="product image" />
+    <a href="#" className='flex justify-center items-start'>
+        <img className="md:p-8 rounded-t-lg xl:h-[300px] lg:h-[300px] md:h-[300px] h-[250px] object-cover" src={item.images[0]} alt="product image" />
     </a>
 
-    <div className="px-5 pb-5  space-y-5">
+{/* div below xontrol title- star icon -button */}
+    <div className="px-5 pb-10  md:space-y-2 ">
         <a href="#">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">{item.title}</h5>
         </a>
@@ -70,7 +71,7 @@ const Product = () => {
             {/* end div wrap start and 5.0 */}
 
         <div className="flex  flex-col items-center justify-evenly space-y-5">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.price}</span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">${item.price}</span>
             <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={ ()=>cartHandler(item)}>Add to cart</button>
         </div>
     </div>
