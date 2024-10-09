@@ -1,10 +1,11 @@
 import './App.css';
 import {useDispatch } from 'react-redux';
+import { Routes, Route} from 'react-router-dom';
 import { setData } from '../src/store/productSlice';
 import { useEffect } from 'react';
-import Product from './componentFolder/Product';
-import Navbar from './componentFolder/Navbar';
-import ShoppingCart from './componentFolder/ShppingCart';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,9 +19,13 @@ function App() {
   }, []);
 
   return <div>
-    <Navbar/>
-    <Product/>
-    <ShoppingCart/>
+    {/* // react router dom 2024 skeleton v6 connect the page--install react router dom npm */}
+     <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="products" element={<Products />} />
+      </Routes>
+
   </div>;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShppingCart = () => {
+const Cart = () => {
   return (
     <div>
       <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -320,4 +320,4 @@ const ShppingCart = () => {
   )
 }
 
-export default ShppingCart
+export default Cart
