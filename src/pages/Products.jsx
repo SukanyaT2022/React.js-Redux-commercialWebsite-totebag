@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import '../styleFolder/product.css'
-// Step1: importing redux function from cartSlice
 import {updateCart} from '../store/cartSlice'
-
 
 const Product = () => {
   const data = useSelector((state) => state.products);

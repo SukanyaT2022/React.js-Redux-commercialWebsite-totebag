@@ -15,7 +15,6 @@ export const cartSlice = createSlice({
       // ...state.value will copy all values 
       // action.payload will add new value  
       state.value = [...state.value, action.payload];
-      console.log(state.value)
     }
   },
 })
