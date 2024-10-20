@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import {updateCart} from '../store/cartSlice'
+import {updateCart,removeItem} from '../store/cartSlice'
 import {useState,useEffect} from "react"
 
 const Cart = () => {
@@ -12,7 +12,7 @@ const Cart = () => {
       setProducts(data)
       console.log(data)
     }
-  },[])
+  },[data])
 
   return (
 
@@ -30,7 +30,7 @@ const Cart = () => {
             <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
               <a href="#" className="shrink-0 md:order-1">
                 <img className="h-20 w-20 dark:hidden" src={item.images[0]} alt="imac image" />
-                <img className="hidden h-20 w-20 dark:block" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="imac image" />
+                <img className="hidden h-20 w-20 dark:block" src={item.images[0]} alt="imac image" />
               </a>
 
               <label for="counter-input" className="sr-only">Choose quantity:</label>
@@ -63,8 +63,8 @@ const Cart = () => {
                     </svg>
                     Add to Favorites
                   </button>
-
-                  <button type="button" className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500">
+{/* // step 2 remove from cart --we --call function line 67--onclick */}
+                  <button type="button" className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500" onClick={()=>dispatch(removeItem(item.id))}>
                     <svg className="me-1.5 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
                     </svg>
