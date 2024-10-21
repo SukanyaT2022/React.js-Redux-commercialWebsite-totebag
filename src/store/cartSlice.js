@@ -20,19 +20,20 @@ export const cartSlice = createSlice({
     removeItem: (state,action)=>{
         const filter  = state.value.filter(item => item.id != action.payload)
         state.value = filter;
-        console.log(state.value)
     },
     increment: (state,action)=>{
-      //what api use for quantity keyword from api--if api have qty but our case no api in qty
-      // state.value.quantity+1;
+      const filter  = state.value.map((item)=>{
+        if(item.id ==action.payload){
+          console.log("match found")
+        }
+  })
     },
     decrement:(state,action)=>{
-  //what api use for quantity keyword from api--if api have qty but our case no api in qtyy
-  // state.value.quantity-1;
+     
     }
   },
 })
 
-export const { updateCart,removeItem } = cartSlice.actions
+export const { updateCart,removeItem,increment } = cartSlice.actions
 
 export default cartSlice.reducer

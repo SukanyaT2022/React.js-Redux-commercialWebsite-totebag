@@ -14,7 +14,14 @@ function App() {
   useEffect(() => {
     fetch('https://dummyjson.com/products')
       .then((response) => response.json())
-      .then((data) => dispatch(setData(data.products)));
+      .then((data) => {
+        // step 1line 19 to 21 crate custume qty coz no qty in api--then step 2 increae qty  we use on card.js line 67
+        const updatedData = data.products.map(product => ({
+          ...product,
+          quantity: 1
+        }));
+        dispatch(setData(updatedData))
+      });
       //dispatch help to call function from redux
   }, []);
 
